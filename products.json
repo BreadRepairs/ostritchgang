@@ -1,29 +1,61 @@
 [
   {
+    "name": "ostritch gang phone",
+    "price": "€5",
+    "description": "uuh cardboard but works ;) ",
+    "stock": true,
+    "badge": "NEW"
+  },
+  {
     "name": "cool hat",
-    "price": "$10",
+    "price": "€10",
     "description": "looks cool",
     "stock": true,
     "badge": "NEW"
   },
   {
     "name": "shadow hoodie",
-    "price": "$28",
+    "price": "€30",
     "description": "cozy and loud",
     "stock": false,
-    "badge": "SALE"
   },
   {
     "name": "glow chain",
-    "price": "$15",
+    "price": "€15",
     "description": "tiny shine, big energy",
     "stock": true,
     "badge": "BEST VALUE"
   },
   {
     "name": "neon socks",
-    "price": "$8",
+    "price": "€8",
     "description": "soft and bright",
     "stock": true
+  },
+  {
+    "name": "ostritch plush",
+    "price": "€20",
+    "description": "very fluffy",
+    "stock": false,
+    "badge": "BEST VALUE"
+  },
+  {
+    "name": "mystery box",
+    "price": "€15",
+    "description": "nobody knows what's inside",
+    "stock": false,
+    "badge": "SALE"
+  },
+  {
+    "name": "samsung galaxy s26 ultra 256gb",
+    "price": "€1299",
+    "description": "somekind of phone",
+    "stock": true,
+  },
+  {
+    "name": "iphone 17 pro max 5g 256gb",
+    "price": "€1400",
+    "description": "again somekind of phone",
+    "stock": false,
   }
 ]
