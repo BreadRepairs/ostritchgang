@@ -40,9 +40,9 @@
   },
   {
     "name": "mystery box",
-    "price": "€15",
-    "description": "nobody knows what's inside",
-    "stock": false,
+    "price": "€10",
+    "description": "nobody knows what's inside. !!ONLY ONE!!",
+    "stock": true,
     "badge": "SALE"
   },
   {
