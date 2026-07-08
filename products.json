@@ -21,11 +21,9 @@
   {
     "name": "glow chain",
     "price": "€15",
-    "description": "tiny shine, big energy", cool",
+    "description": "tiny shine, big energy",
     "stock": true,
     "badge": "NEW"
-    "stock": true,
-    "badge": "BEST VALUE"
   },
   {
     "name": "neon socks",
