@@ -9,9 +9,8 @@
   {
     "name": "cool hat",
     "price": "€10",
-    "description": "looks cool",
-    "stock": true,
-    "badge": "NEW"
+    "description": "looks cool"m
+    "stock": true
   },
   {
     "name": "shadow hoodie",
@@ -22,7 +21,9 @@
   {
     "name": "glow chain",
     "price": "€15",
-    "description": "tiny shine, big energy",
+    "description": "tiny shine, big energy", cool",
+    "stock": true,
+    "badge": "NEW"
     "stock": true,
     "badge": "BEST VALUE"
   },
