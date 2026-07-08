@@ -49,12 +49,12 @@
     "name": "samsung galaxy s26 ultra 256gb",
     "price": "€1299",
     "description": "somekind of phone",
-    "stock": true,
+    "stock": true
   },
   {
     "name": "iphone 17 pro max 5g 256gb",
     "price": "€1400",
     "description": "again somekind of phone",
-    "stock": false,
+    "stock": false
   }
 ]
