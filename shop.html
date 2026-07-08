@@ -396,37 +396,56 @@
       const loadingState = document.getElementById("loadingState");
       const emptyState = document.getElementById("emptyState");
 
+      function setViewState({ loading, empty }) {
+        loadingState.style.display = loading ? "grid" : "none";
+        emptyState.style.display = empty ? "grid" : "none";
+      }
+
+      function normalizeProduct(product) {
+        return {
+          name: product && product.name ? product.name : "untitled product",
+          price: product && product.price ? product.price : "$0",
+          description: product && product.description ? product.description : "",
+          stock: Boolean(product && product.stock),
+          badge: typeof product?.badge === "string" && product.badge.trim() ? product.badge : ""
+        };
+      }
+
       function renderProducts(products) {
         catalogGrid.innerHTML = "";
-        emptyState.hidden = true;
 
-        if (!Array.isArray(products) || products.length === 0) {
-          emptyState.hidden = false;
+        const list = Array.isArray(products) ? products : [];
+
+        if (list.length === 0) {
+          setViewState({ loading: false, empty: true });
           return;
         }
 
-        const sorted = [...products].sort((a, b) => Number(b.stock) - Number(a.stock));
+        setViewState({ loading: false, empty: false });
+
+        const sorted = [...list].sort((a, b) => Number(b.stock) - Number(a.stock));
 
         sorted.forEach((product, index) => {
+          const item = normalizeProduct(product);
           const article = document.createElement("article");
           article.className = "product-card";
           article.style.animationDelay = `${index * 70}ms`;
 
-          const badgeMarkup = product.badge ? `<span class="card-badge">${product.badge}</span>` : "";
-          const stockMarkup = product.stock
+          const badgeMarkup = item.badge ? `<span class="card-badge">${item.badge}</span>` : "";
+          const stockMarkup = item.stock
             ? '<span class="stock-pill stock-in">🟢 in stock</span>'
             : '<span class="stock-pill stock-out">🔴 sold out</span>';
 
           article.innerHTML = `
             <div>
               <div class="card-top">
-                <h3 class="product-name">${product.name}</h3>
+                <h3 class="product-name">${item.name}</h3>
                 ${badgeMarkup}
               </div>
-              <p class="product-description">${product.description}</p>
+              <p class="product-description">${item.description}</p>
             </div>
             <div class="card-bottom">
-              <span class="price">${product.price}</span>
+              <span class="price">${item.price}</span>
               ${stockMarkup}
             </div>
           `;
@@ -436,15 +455,25 @@
       }
 
       async function loadProducts() {
+        setViewState({ loading: true, empty: false });
+
         try {
-          const response = await fetch("products.json");
-          if (!response.ok) throw new Error("failed to load products");
-          const data = await response.json();
-          renderProducts(data);
+          const timeoutPromise = new Promise((_, reject) => {
+            window.setTimeout(() => reject(new Error("timed out")), 4000);
+          });
+
+          const response = await Promise.race([
+            fetch("products.json", { cache: "no-store" }),
+            timeoutPromise
+          ]);
+
+          if (!response.ok) throw new Error(`request failed with ${response.status}`);
+
+          const data = await Promise.race([response.json(), timeoutPromise]);
+          renderProducts(Array.isArray(data) ? data : []);
         } catch (error) {
+          console.error("failed to load products", error);
           renderProducts([]);
-        } finally {
-          loadingState.hidden = true;
         }
       }
 
