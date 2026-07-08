@@ -21,7 +21,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0b0812;
+background:#090913;
 color:white;
 overflow-x:hidden;
 }
@@ -31,8 +31,8 @@ content:"";
 position:fixed;
 inset:0;
 background:
-radial-gradient(circle at top,#9d4edd44 0%,transparent 40%),
-radial-gradient(circle at bottom right,#c77dff22 0%,transparent 45%);
+radial-gradient(circle at top,#a855f733 0%,transparent 40%),
+radial-gradient(circle at bottom right,#9333ea22 0%,transparent 45%);
 z-index:-1;
 }
 
@@ -46,7 +46,7 @@ padding:25px 10%;
 .logo{
 font-size:30px;
 font-weight:700;
-color:#c77dff;
+color:#c084fc;
 }
 
 nav a{
@@ -57,11 +57,11 @@ transition:.3s;
 }
 
 nav a:hover{
-color:#c77dff;
+color:#c084fc;
 }
 
 .hero{
-min-height:90vh;
+min-height:80vh;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -75,11 +75,11 @@ margin-bottom:15px;
 }
 
 .hero span{
-color:#c77dff;
+color:#c084fc;
 }
 
 .hero p{
-max-width:750px;
+max-width:700px;
 font-size:20px;
 margin:auto;
 }
@@ -88,62 +88,78 @@ margin:auto;
 display:inline-block;
 margin-top:35px;
 padding:15px 35px;
-background:#9d4edd;
+background:#9333ea;
 color:white;
 text-decoration:none;
 border-radius:40px;
-transition:.3s;
 font-weight:600;
+transition:.3s;
 }
 
 .button:hover{
 transform:scale(1.05);
-box-shadow:0 0 20px #9d4edd;
+box-shadow:0 0 20px #9333ea;
 }
 
 section{
-padding:90px 10%;
+padding:80px 10%;
 }
 
 .title{
 font-size:42px;
 text-align:center;
-margin-bottom:45px;
+margin-bottom:40px;
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.card{
-background:#181320;
+.featured{
+max-width:600px;
+margin:auto;
+background:#151521;
 padding:30px;
-border-radius:15px;
-border:1px solid #2a2338;
+border-radius:20px;
+border:1px solid #2f2f40;
 transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-8px);
-border-color:#c77dff;
-box-shadow:0 0 20px #c77dff44;
+.featured:hover{
+transform:translateY(-6px);
+box-shadow:0 0 25px #9333ea66;
+border-color:#c084fc;
 }
 
-.card h2{
-color:#c77dff;
-margin-bottom:15px;
+.featured h2{
+color:#c084fc;
+margin-bottom:10px;
 }
 
-.contact-box{
-max-width:700px;
-margin:auto;
-padding:35px;
-background:#181320;
-border-radius:15px;
-border:1px solid #2a2338;
-text-align:center;
+.featured p{
+margin:10px 0;
+color:#ddd;
+}
+
+.price{
+font-size:22px;
+font-weight:bold;
+margin-top:20px;
+color:#c084fc;
+}
+
+.stock{
+margin-top:15px;
+display:inline-block;
+padding:8px 15px;
+border-radius:999px;
+font-weight:bold;
+}
+
+.in{
+background:#1b4d2b;
+color:#6cff9f;
+}
+
+.out{
+background:#4b1d28;
+color:#ff7d93;
 }
 
 footer{
@@ -165,6 +181,7 @@ font-size:18px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -174,9 +191,8 @@ font-size:18px;
 <div class="logo">ostritch gang</div>
 
 <div>
-<a href="#shop">shop</a>
-<a href="#about">about</a>
-<a href="#contact">contact</a>
+<a href="#featured">featured</a>
+<a href="shop.html">shop</a>
 </div>
 
 </nav>
@@ -188,87 +204,24 @@ font-size:18px;
 <h1><span>ostritch</span><br>gang</h1>
 
 <p>
-welcome to ostritch gang. we sell random stuff because we felt like it.
-sometimes it's useful. sometimes it's funny. sometimes it's both.
+welcome to ostritch gang.
+we sell random things because why not.
+have a look around.
 </p>
 
-<a class="button" href="#shop">go shopping</a>
+<a class="button" href="shop.html">go to shop</a>
 
 </div>
 
 </section>
 
-<section id="shop">
+<section id="featured">
 
-<h1 class="title">shop</h1>
+<h1 class="title">featured product</h1>
 
-<div class="cards">
+<div id="product" class="featured">
 
-<div class="card">
-<h2>🛒 random things</h2>
-<p>all the cool stuff ends up here</p>
-</div>
-
-<div class="card">
-<h2>🔥 good deals</h2>
-<p>cheap enough that nobody complained yet</p>
-</div>
-
-<div class="card">
-<h2>✨ new stuff</h2>
-<p>freshly added things waiting for a new home</p>
-</div>
-
-<div class="card">
-<h2>📦 whatever</h2>
-<p>if it exists there's a chance well sell it</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="about">
-
-<h1 class="title">about</h1>
-
-<div class="cards">
-
-<div class="card">
-<h2>🦤 who are we</h2>
-<p>just a bunch of people making shop because why not</p>
-</div>
-
-<div class="card">
-<h2>🎉 why this exists</h2>
-<p>because having a shop sound fun.</p>
-</div>
-
-<div class="card">
-<h2>💜 our goal</h2>
-<p>sell cool things and have a good time doing</p>
-</div>
-
-<div class="card">
-<h2>🚀 future</h2>
-<p>more products, more chaos and hopefully more fun.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<h1 class="title">contact</h1>
-
-<div class="contact-box">
-
-<p>need something?</p>
-
-<p>just message one of us.</p>
-
-<p>we'll probably answer eventually :) (+358 45 252 6961) </p>
+<p>loading...</p>
 
 </div>
 
@@ -276,9 +229,47 @@ sometimes it's useful. sometimes it's funny. sometimes it's both.
 
 <footer>
 
-© 2026 ostritch gang • made with questionable decisions
+© 2026 ostritch gang
 
 </footer>
+
+<script>
+
+fetch("products.json")
+.then(r=>r.json())
+.then(data=>{
+
+if(data.length===0){
+
+document.getElementById("product").innerHTML=
+"<h2>nothing here yet</h2><p>check the shop later.</p>";
+
+return;
+
+}
+
+// First in-stock product, or the first product if none are in stock
+const first=data.find(p=>p.stock) || data[0];
+
+document.getElementById("product").innerHTML=`
+
+<h2>${first.name}</h2>
+
+<p>${first.description}</p>
+
+<div class="price">${first.price}</div>
+
+<div class="stock ${first.stock?"in":"out"}">
+
+${first.stock?"🟢 in stock":"🔴 sold out"}
+
+</div>
+
+`;
+
+});
+
+</script>
 
 </body>
 </html>
