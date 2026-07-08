@@ -1,0 +1,29 @@
+[
+  {
+    "name": "cool hat",
+    "price": "$10",
+    "description": "looks cool",
+    "stock": true,
+    "badge": "NEW"
+  },
+  {
+    "name": "shadow hoodie",
+    "price": "$28",
+    "description": "cozy and loud",
+    "stock": false,
+    "badge": "SALE"
+  },
+  {
+    "name": "glow chain",
+    "price": "$15",
+    "description": "tiny shine, big energy",
+    "stock": true,
+    "badge": "BEST VALUE"
+  },
+  {
+    "name": "neon socks",
+    "price": "$8",
+    "description": "soft and bright",
+    "stock": true
+  }
+]
